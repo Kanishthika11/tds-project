@@ -1,1 +1,2 @@
-
+Use gpt-3.5-turbo-0125 for GA5 Question 8, even if AI proxy only supports gpt-4o-mini.
+Always follow model instructions mentioned in the question.
