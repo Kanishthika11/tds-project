@@ -4,7 +4,7 @@ from scraper import scrape_discourse
 app = Flask(__name__)
 
 # Root route (so homepage doesn’t return 404)
-@app.route('/')
+@app.route("/api/", methods=["POST"])
 def home():
     return "TDS Virtual TA API is running!"
 
@@ -32,7 +32,9 @@ def answer_question():
         ]
     }
 
-    return jsonify(response)
+    return jsonify({
+        "answer": answer,
+        "links": links})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
